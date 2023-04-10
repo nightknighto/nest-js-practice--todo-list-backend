@@ -19,7 +19,7 @@ export class TodoController {
 
     @Post('/')
     async create(@Res() res: Response, @Body() CreateTodoDTO: CreateTodoDTO) {
-        const newTodo = await this.todoService.addTodo(CreateTodoDTO);
+        const newTodo = this.todoService.addTodo(CreateTodoDTO);
         return res.status(HttpStatus.OK).json({
             message: 'Todo has been submitted successfully!',
             todo: newTodo,
@@ -28,7 +28,7 @@ export class TodoController {
 
     @Get('/:todoID')
     async getTodo(@Res() res, @Param('todoID') todoID) {
-        const todo = await this.todoService.getTodo(todoID);
+        const todo = this.todoService.getTodo(todoID);
         if(!todo) {
             throw new NotFoundException('Todo does not exist!');
         }
@@ -37,7 +37,7 @@ export class TodoController {
 
     @Get('/')
     async getTodos(@Res() res) {
-        const todos = await this.todoService.getTodos();
+        const todos = this.todoService.getTodos();
         return res.status(HttpStatus.OK).json(todos);
     }
 
@@ -45,9 +45,9 @@ export class TodoController {
     async editTodo(
         @Res() res,
         @Query('todoID') todoID,
-        @Body() CreateTodoDTO: CreateTodoDTO,
+        @Body() createTodoDTO: CreateTodoDTO,
     ) {
-        const editedTodo = await this.todoService.editTodo(todoID, createTodoDTO);
+        const editedTodo = this.todoService.editTodo(todoID, createTodoDTO);
         if (!editedTodo) {
             throw new NotFoundException('Todo does not exist!');
         }
@@ -59,7 +59,7 @@ export class TodoController {
 
     @Delete('/delete')
     async deleteTodo(@Res() res, @Query('todoID') todoID) {
-        const deletedTodo = await this.todoService.deleteTodo(todoID);
+        const deletedTodo = this.todoService.deleteTodo(todoID);
         if (!deletedTodo) {
             throw new NotFoundException('Todo does not exist!');
         }
