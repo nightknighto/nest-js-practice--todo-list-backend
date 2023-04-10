@@ -18,8 +18,8 @@ export class TodoController {
     }
 
     @Post('/')
-    async create(@Res() res: Response, @Body() CreateTodoDTO: CreateTodoDTO) {
-        const newTodo = this.todoService.addTodo(CreateTodoDTO);
+    async create(@Res() res: Response, @Body() createTodoDTO: CreateTodoDTO) {
+        const newTodo = this.todoService.addTodo(createTodoDTO);
         return res.status(HttpStatus.OK).json({
             message: 'Todo has been submitted successfully!',
             todo: newTodo,

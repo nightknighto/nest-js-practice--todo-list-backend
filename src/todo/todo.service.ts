@@ -27,7 +27,7 @@ export class TodoService {
     }
 
     getTodo(id: number): Todo | undefined {
-        return this.todos.find(todo => todo.id === id);
+        return this.todos.find(todo => todo.id == id);
     }
 
     getTodos() {
@@ -35,7 +35,7 @@ export class TodoService {
     }
 
     editTodo(id: number, createTodoDTO: CreateTodoDTO): Todo | undefined {
-        const target = this.todos.find( todo => todo.id === id);
+        const target = this.todos.find( todo => todo.id == id);
         
         if (target) {
             Object.assign(target, createTodoDTO);
@@ -45,10 +45,10 @@ export class TodoService {
     }
 
     deleteTodo(id: number): Todo | undefined {
-        const target = this.todos.find( todo => todo.id === id);
+        const target = this.todos.find( todo => todo.id == id);
         
         if (target) {
-            this.todos = this.todos.filter(todo => todo.id !== id);
+            this.todos = this.todos.filter(todo => todo.id != id);
         }
 
         return target;
