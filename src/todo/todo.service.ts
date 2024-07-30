@@ -23,7 +23,7 @@ export class TodoService {
   addTodo(createTodoDTO: CreateTodoDTO) {
     this.todos.push({
       ...createTodoDTO,
-      id: crypto.getRandomValues(new Uint32Array(1))[0],
+      id: Math.floor(1000000 * Math.random()) ,
     });
 
     return this.todos.at(-1);
