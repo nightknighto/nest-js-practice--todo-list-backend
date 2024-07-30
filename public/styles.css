@@ -1,0 +1,90 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 20px;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	background: #f9f9f9;
+	margin: 5px 0;
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+form {
+	display: flex;
+	justify-content: space-between;
+}
+
+input[type="text"] {
+	flex: 1;
+	padding: 10px;
+	margin-right: 10px;
+	border: 1px solid #ddd;
+}
+
+button {
+	padding: 10px 20px;
+	border: none;
+	background: #5cb85c;
+	color: #fff;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #4cae4c;
+}
+/* Existing styles */
+
+li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button.edit, button.delete {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button.edit {
+    background: #f0ad4e;
+    color: #fff;
+}
+
+button.edit:hover {
+    background: #ec971f;
+}
+
+button.delete {
+    background: #d9534f;
+    color: #fff;
+}
+
+button.delete:hover {
+    background: #c9302c;
+}
